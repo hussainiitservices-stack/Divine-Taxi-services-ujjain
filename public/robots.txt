@@ -1,0 +1,28 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+User-Agent: GPTBot
+Allow: /
+
+User-Agent: ChatGPT-User
+Allow: /
+
+User-Agent: Google-Extended
+Allow: /
+
+User-Agent: ClaudeBot
+Allow: /
+
+User-Agent: Anthropic-AI
+Allow: /
+
+User-Agent: PerplexityBot
+Allow: /
+
+User-Agent: Amazonbot
+Allow: /
+
+Host: https://www.divinetaxiserviceujjain.com
+Sitemap: https://www.divinetaxiserviceujjain.com/sitemap.xml

@@ -1,7 +1,6 @@
+/** Canonical production domain — keep in sync with live hosting */
 export const SITE_NAME = "Divine Taxi";
-export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.divinetaxiserviceujjain.com"
-).replace(/\/$/, "");
+export const SITE_URL = "https://www.divinetaxiserviceujjain.com";
 
 export const SITE_DESCRIPTION =
   "Reliable taxi service in Ujjain for Mahakaleshwar darshan, Indore airport transfers, railway pickups, and Madhya Pradesh tour packages with professional local drivers.";
@@ -24,7 +23,14 @@ export type SitePage = {
   path: string;
   title: string;
   description: string;
-  changeFrequency: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
+  changeFrequency:
+    | "always"
+    | "hourly"
+    | "daily"
+    | "weekly"
+    | "monthly"
+    | "yearly"
+    | "never";
   priority: number;
 };
 
