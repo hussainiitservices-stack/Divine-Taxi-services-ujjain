@@ -1,12 +1,13 @@
 import { PHONE_TEL, PHONE_DISPLAY } from "@/lib/contact";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+import { SITE_DESCRIPTION, SITE_URL } from "@/lib/site";
 
 export function JsonLd() {
   const data = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "TaxiService"],
     "@id": `${SITE_URL}/#business`,
-    name: SITE_NAME,
+    name: "Divine Taxi Service Ujjain",
+    alternateName: ["Divine Taxi", "Divine Taxi Ujjain"],
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     telephone: PHONE_TEL,
@@ -44,13 +45,22 @@ export function JsonLd() {
       opens: "00:00",
       closes: "23:59",
     },
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: PHONE_TEL,
-      contactType: "customer service",
-      availableLanguage: ["en", "hi"],
-      areaServed: "IN",
-    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: PHONE_TEL,
+        contactType: "customer service",
+        availableLanguage: ["en", "hi"],
+        areaServed: "IN",
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: PHONE_TEL,
+        contactType: "reservations",
+        availableLanguage: ["en", "hi"],
+        areaServed: "IN",
+      },
+    ],
     sameAs: [`https://wa.me/${PHONE_TEL.replace("+", "")}`],
     knowsAbout: [
       "Ujjain taxi service",

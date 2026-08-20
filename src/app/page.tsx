@@ -3,9 +3,11 @@ import Link from "next/link";
 import { Advantage } from "@/components/Advantage";
 import { Cars } from "@/components/Cars";
 import { Hero } from "@/components/Hero";
+import { HomePhone } from "@/components/HomePhone";
 import { Packages } from "@/components/Packages";
 import { Routes } from "@/components/Routes";
 import { Services } from "@/components/Services";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/contact";
 import { SITE_DESCRIPTION } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -23,8 +25,11 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
+    <div itemScope itemType="https://schema.org/LocalBusiness">
+      <meta itemProp="name" content="Divine Taxi Service Ujjain" />
+      <meta itemProp="telephone" content={PHONE_TEL} />
       <Hero />
+      <HomePhone />
       <Services limit={3} showLink />
       <Cars />
       <Advantage />
@@ -41,6 +46,16 @@ export default function Home() {
               Call or WhatsApp for darshan, airport, and outstation cab
               bookings.
             </p>
+            <p className="mt-4 text-lg font-semibold tracking-wide sm:text-xl">
+              Call us:{" "}
+              <a
+                href={`tel:${PHONE_TEL}`}
+                className="text-saffron underline-offset-4 hover:underline"
+                itemProp="telephone"
+              >
+                {PHONE_DISPLAY}
+              </a>
+            </p>
           </div>
           <Link
             href="/contact"
@@ -50,6 +65,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-    </>
+    </div>
   );
 }

@@ -34,26 +34,31 @@ export function Hero() {
           Comfortable cabs for Mahakal darshan, Indore airport transfers, and
           Madhya Pradesh heritage tours.
         </p>
-        <div className="animate-fade-up-delay-3 mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
-          <Link
-            href="/contact"
-            className="bg-saffron px-5 py-3 text-sm font-semibold tracking-wide text-ink transition-colors hover:bg-saffron-deep hover:text-foam sm:px-6 sm:text-base"
-          >
-            Book a ride
-          </Link>
-          <Link
-            href="/packages"
-            className="border border-foam/50 px-5 py-3 text-sm font-medium tracking-wide text-foam transition-colors hover:border-foam hover:bg-foam/10 sm:px-6 sm:text-base"
-          >
-            View packages
-          </Link>
-          <a
-            href={`tel:${PHONE_TEL}`}
-            className="text-sm font-medium tracking-wide text-foam/80 underline-offset-4 transition hover:text-saffron hover:underline sm:text-base"
-            aria-label={`Call Divine Taxi at ${PHONE_DISPLAY}`}
-          >
-            {PHONE_DISPLAY}
-          </a>
+        <div className="animate-fade-up-delay-3 mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+            <Link
+              href="/contact"
+              className="bg-saffron px-5 py-3 text-sm font-semibold tracking-wide text-ink transition-colors hover:bg-saffron-deep hover:text-foam sm:px-6 sm:text-base"
+            >
+              Book a ride
+            </Link>
+            <Link
+              href="/packages"
+              className="border border-foam/50 px-5 py-3 text-sm font-medium tracking-wide text-foam transition-colors hover:border-foam hover:bg-foam/10 sm:px-6 sm:text-base"
+            >
+              View packages
+            </Link>
+          </div>
+          <p className="text-sm text-foam/80 sm:text-base">
+            Call{" "}
+            <a
+              href={`tel:${PHONE_TEL}`}
+              className="font-semibold tracking-wide text-saffron underline-offset-4 hover:underline"
+              itemProp="telephone"
+            >
+              {PHONE_DISPLAY}
+            </a>
+          </p>
         </div>
       </div>
     </section>

@@ -77,7 +77,17 @@ export function Footer() {
 
       <div className="mx-auto mt-12 flex max-w-6xl flex-col gap-2 border-t border-foam/15 pt-6 text-sm text-foam/55 sm:flex-row sm:items-center sm:justify-between">
         <p>© {new Date().getFullYear()} Divine Taxi Ujjain</p>
-        <p>Safe · On time · Local</p>
+        <p>
+          Designed and developed by{" "}
+          <a
+            href="https://hussainiitservices.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foam/75 underline-offset-4 transition hover:text-saffron hover:underline"
+          >
+            hussainiitservices.com
+          </a>
+        </p>
       </div>
     </footer>
   );
