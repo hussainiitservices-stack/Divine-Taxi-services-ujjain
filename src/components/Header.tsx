@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { PhoneLink } from "@/components/PhoneLink";
 import { SiteLogo } from "@/components/SiteLogo";
-import { PHONE_TEL } from "@/lib/contact";
+import { SITE_URL } from "@/lib/site";
 import { navLinks } from "@/lib/nav";
 
 export function Header() {
@@ -41,6 +42,20 @@ export function Header() {
           : "bg-transparent text-foam"
       }`}
     >
+      <div
+        itemScope
+        itemType="https://schema.org/TaxiService"
+        itemID={`${SITE_URL}/#business`}
+      >
+        <meta itemProp="name" content="Divine Taxi Service Ujjain" />
+        <meta itemProp="url" content={SITE_URL} />
+        <PhoneLink
+          prefix="Call now "
+          className="flex items-center justify-center gap-2 bg-saffron px-4 py-2 text-center text-sm font-semibold tracking-wide text-ink"
+          numberClassName="font-[family-name:var(--font-yeseva)] text-base tracking-wider sm:text-lg"
+        />
+      </div>
+
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-8 sm:py-3">
         <SiteLogo />
 
@@ -63,21 +78,13 @@ export function Header() {
               </Link>
             );
           })}
-          <a
-            href={`tel:${PHONE_TEL}`}
-            className="border border-foam/35 px-4 py-2 transition-colors hover:border-saffron hover:bg-saffron hover:text-ink"
-          >
-            Call
-          </a>
+          <PhoneLink
+            className="bg-saffron px-4 py-2 font-semibold tracking-wide text-ink transition-colors hover:bg-saffron-deep hover:text-foam"
+            numberClassName="tracking-wide"
+          />
         </nav>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <a
-            href={`tel:${PHONE_TEL}`}
-            className="border border-foam/35 px-3 py-1.5 text-sm transition-colors hover:border-saffron hover:bg-saffron hover:text-ink"
-          >
-            Call
-          </a>
           <button
             type="button"
             aria-expanded={open}
@@ -94,7 +101,7 @@ export function Header() {
       {open && (
         <nav
           id="mobile-nav"
-          className="max-h-[calc(100svh-4rem)] overflow-y-auto border-t border-foam/10 bg-ink/98 px-4 py-4 lg:hidden"
+          className="max-h-[calc(100svh-7.5rem)] overflow-y-auto border-t border-foam/10 bg-ink/98 px-4 py-4 lg:hidden"
           aria-label="Mobile"
         >
           <ul className="mx-auto flex max-w-6xl flex-col gap-1 text-base">

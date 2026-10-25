@@ -1,4 +1,4 @@
-import { PHONE_TEL, PHONE_DISPLAY } from "@/lib/contact";
+import { PHONE_DISPLAY, PHONE_SCHEMA, WHATSAPP_NUMBER } from "@/lib/contact";
 import { SITE_DESCRIPTION, SITE_URL } from "@/lib/site";
 
 export function JsonLd() {
@@ -10,7 +10,7 @@ export function JsonLd() {
     alternateName: ["Divine Taxi", "Divine Taxi Ujjain"],
     description: SITE_DESCRIPTION,
     url: SITE_URL,
-    telephone: PHONE_TEL,
+    telephone: PHONE_SCHEMA,
     image: `${SITE_URL}/logo.png`,
     logo: `${SITE_URL}/logo.png`,
     priceRange: "₹₹",
@@ -48,20 +48,20 @@ export function JsonLd() {
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: PHONE_TEL,
+        telephone: PHONE_SCHEMA,
         contactType: "customer service",
         availableLanguage: ["en", "hi"],
         areaServed: "IN",
       },
       {
         "@type": "ContactPoint",
-        telephone: PHONE_TEL,
+        telephone: PHONE_SCHEMA,
         contactType: "reservations",
         availableLanguage: ["en", "hi"],
         areaServed: "IN",
       },
     ],
-    sameAs: [`https://wa.me/${PHONE_TEL.replace("+", "")}`],
+    sameAs: [`https://wa.me/${WHATSAPP_NUMBER}`],
     knowsAbout: [
       "Ujjain taxi service",
       "Mahakaleshwar darshan cab",

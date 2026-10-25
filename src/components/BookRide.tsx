@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { PHONE_DISPLAY, PHONE_TEL, whatsappLink } from "@/lib/contact";
+import { PhoneLink } from "@/components/PhoneLink";
+import { whatsappLink } from "@/lib/contact";
 
 export function BookRide() {
   const [submitted, setSubmitted] = useState(false);
@@ -47,13 +48,10 @@ export function BookRide() {
           </p>
           <div className="mt-8 space-y-3 text-sm text-ink-soft">
             <p>
-              Call{" "}
-              <a
-                href={`tel:${PHONE_TEL}`}
+              <PhoneLink
+                prefix="Call "
                 className="font-semibold text-temple underline-offset-4 hover:underline"
-              >
-                {PHONE_DISPLAY}
-              </a>
+              />
             </p>
             <p>Available daily · Early aarti pickups welcome</p>
           </div>

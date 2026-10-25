@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/contact";
+import { PhoneLink } from "@/components/PhoneLink";
 
 /** Visible homepage phone for Google Business Profile call verification */
 export function HomePhone() {
@@ -22,15 +22,14 @@ export function HomePhone() {
           </p>
         </div>
 
-        <div className="shrink-0">
-          <p className="text-sm text-ink-soft">Calling number</p>
-          <a
-            href={`tel:${PHONE_TEL}`}
+        <div className="shrink-0 border border-saffron bg-saffron/15 px-5 py-4">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-saffron-deep">
+            Official phone
+          </p>
+          <PhoneLink
             className="mt-1 block font-[family-name:var(--font-yeseva)] text-3xl tracking-wide text-temple transition hover:text-saffron-deep sm:text-4xl"
-            itemProp="telephone"
-          >
-            {PHONE_DISPLAY}
-          </a>
+            numberClassName="tracking-wide"
+          />
           <p className="mt-1 text-sm text-ink-soft">
             WhatsApp available on the same number
           </p>

@@ -32,7 +32,7 @@ export function PageHero({
             "linear-gradient(115deg, rgba(26,34,40,0.84) 0%, rgba(44,74,94,0.55) 50%, rgba(122,31,31,0.4) 100%)",
         }}
       />
-      <div className="relative z-10 mx-auto flex min-h-[52svh] max-w-6xl flex-col justify-end px-4 pb-10 pt-24 sm:min-h-[58svh] sm:px-8 sm:pb-16 sm:pt-28">
+      <div className="relative z-10 mx-auto flex min-h-[52svh] max-w-6xl flex-col justify-end px-4 pb-10 pt-32 sm:min-h-[58svh] sm:px-8 sm:pb-16 sm:pt-36">
         <p className="animate-fade-up text-xs font-medium uppercase tracking-[0.2em] text-saffron sm:text-sm">
           {eyebrow}
         </p>

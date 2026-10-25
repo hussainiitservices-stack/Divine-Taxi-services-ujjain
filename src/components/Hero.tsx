@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/contact";
+import { PhoneLink } from "@/components/PhoneLink";
 import { heroImage } from "@/lib/images";
 
 export function Hero() {
@@ -22,7 +22,7 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-14 pt-28 sm:px-8 sm:pb-20">
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-14 pt-36 sm:px-8 sm:pb-20">
         <h1 className="animate-fade-up font-[family-name:var(--font-yeseva)] text-5xl leading-none tracking-wide text-foam sm:text-7xl md:text-8xl lg:text-9xl">
           Divine Taxi
         </h1>
@@ -50,14 +50,11 @@ export function Hero() {
             </Link>
           </div>
           <p className="text-sm text-foam/80 sm:text-base">
-            Call{" "}
-            <a
-              href={`tel:${PHONE_TEL}`}
+            <PhoneLink
+              prefix="Call "
               className="font-semibold tracking-wide text-saffron underline-offset-4 hover:underline"
-              itemProp="telephone"
-            >
-              {PHONE_DISPLAY}
-            </a>
+              numberClassName="tracking-wide"
+            />
           </p>
         </div>
       </div>

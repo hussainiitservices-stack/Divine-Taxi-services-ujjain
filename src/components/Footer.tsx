@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { PhoneLink } from "@/components/PhoneLink";
 import { SiteLogo } from "@/components/SiteLogo";
-import { PHONE_DISPLAY, PHONE_TEL, whatsappLink } from "@/lib/contact";
+import { whatsappLink } from "@/lib/contact";
 import { navLinks } from "@/lib/nav";
+import { SITE_URL } from "@/lib/site";
 
 const offerings = [
   "Airport transfer",
@@ -56,12 +58,21 @@ export function Footer() {
           <p className="mt-4 text-sm text-foam/70">
             Reach out anytime — we are happy to help plan your ride.
           </p>
-          <a
-            href={`tel:${PHONE_TEL}`}
-            className="mt-3 inline-block text-lg font-semibold text-foam transition hover:text-saffron"
+          <address
+            className="mt-3 not-italic"
+            itemScope
+            itemType="https://schema.org/TaxiService"
+            itemID={`${SITE_URL}/#business`}
           >
-            {PHONE_DISPLAY}
-          </a>
+            <meta itemProp="name" content="Divine Taxi Service Ujjain" />
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-saffron">
+              Phone
+            </p>
+            <PhoneLink
+              className="mt-1 inline-block text-xl font-semibold tracking-wide text-foam transition hover:text-saffron"
+              numberClassName="tracking-wide"
+            />
+          </address>
           <a
             href={whatsappLink(
               "Namaste Divine Taxi, I need assistance with a booking.",

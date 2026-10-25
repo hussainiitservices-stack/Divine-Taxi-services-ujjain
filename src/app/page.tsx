@@ -7,7 +7,8 @@ import { HomePhone } from "@/components/HomePhone";
 import { Packages } from "@/components/Packages";
 import { Routes } from "@/components/Routes";
 import { Services } from "@/components/Services";
-import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/contact";
+import { PhoneLink } from "@/components/PhoneLink";
+import { PHONE_TEL } from "@/lib/contact";
 import { SITE_DESCRIPTION } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -47,14 +48,11 @@ export default function Home() {
               bookings.
             </p>
             <p className="mt-4 text-lg font-semibold tracking-wide sm:text-xl">
-              Call us:{" "}
-              <a
-                href={`tel:${PHONE_TEL}`}
+              <PhoneLink
+                prefix="Call us: "
                 className="text-saffron underline-offset-4 hover:underline"
-                itemProp="telephone"
-              >
-                {PHONE_DISPLAY}
-              </a>
+                numberClassName="tracking-wide"
+              />
             </p>
           </div>
           <Link
